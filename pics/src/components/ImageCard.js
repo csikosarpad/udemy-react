@@ -22,7 +22,6 @@ export default class ImageCard extends React.Component {
     const { description, src } = this.props;
     return (
       <div
-        className={`spans_${this.state.spans}`}
         style={{ gridRowEnd: `span ${this.state.spans}` }}
       >
         <img ref={this.imageRef} src={src} alt={description} />

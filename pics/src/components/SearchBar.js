@@ -5,7 +5,7 @@ import React from "react";
 class SearchBar extends React.Component {
   state = { term: "" };
   onInputChange(event) {}
-  onFormSubmit = (event) => {
+  onFormSubmit = event => {
     event.preventDefault();
     if (this.state.term.length > 0) {
       this.props.onSubmit(this.state.term);
