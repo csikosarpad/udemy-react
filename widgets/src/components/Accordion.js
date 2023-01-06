@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-class _Accordion extends React.Component {
+/* class _Accordion extends React.Component {
   state = { activeIndex: 0 };
   onTitleClick = (index) => {
     this.setState({ activeIndex: index });
@@ -33,7 +33,7 @@ class _Accordion extends React.Component {
     );
   }
 }
-
+ */
 const Accordion = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -41,13 +41,14 @@ const Accordion = ({ items }) => {
     setActiveIndex(index);
   };
   const renderedItems = items.map((item, index) => {
+    const active = index === activeIndex ? "active" : "";
     return (
       <React.Fragment key={index}>
-        <div className="title active" onClick={() => onTitleClick(index)}>
+        <div className={`title ${active}`} onClick={() => onTitleClick(index)}>
           <i className="dropdown icon"></i>
           {item.title}
         </div>
-        <div className="content active">
+        <div className={`content ${active}`}>
           <p>{item.content}</p>
         </div>
       </React.Fragment>
