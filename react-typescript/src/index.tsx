@@ -1,9 +1,13 @@
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { store } from "./state";
+import RepositoriesList from "./components/RepositoriesList";
+
 //import GuestList from "./state/GuestList.";
 //import UserSearch from "./state/UserSearch";
 //import EventComponent from "./events/EventComponent";
 //import UserSearch from './classes/UserSearch';
-import UserSearch from './refs/UserSearch';
+//import UserSearch from './refs/UserSearch';
 
 
 /*const mockData = [
@@ -16,11 +20,10 @@ import UserSearch from './refs/UserSearch';
 const users = mockData;
 */
 const App = () => {
-    return <div>
-        <h1>Hi there!</h1>
-        {/*<GuestList /> */}
-        <UserSearch/>
-    </div>
+    return <Provider store={store}>
+        <div>Hello</div>
+        <RepositoriesList />
+    </Provider>
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
